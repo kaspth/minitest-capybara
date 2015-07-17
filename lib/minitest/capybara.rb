@@ -5,8 +5,8 @@ module Minitest
   module Capybara
     @@assertions = ::Capybara::Session::NODE_METHODS.grep(/^has_/).map { |s| s.to_s.match(/^has_(.*?)\?/)[1] }
     @@refutations = @@assertions.grep(/^no_/)
-    @@assertions = (@@assertions - @@refutations).sort
-    @@refutations = @@refutations.map { |s| s.match(/^no_(.*)/)[1] }.sort
+    @@assertions = (@@assertions - %w(select) - @@refutations).sort
+    @@refutations = @@refutations.map { |s| s.match(/^no_(.*)/)[1] }.sort.tap { |r| r.delete('select') }
 
     def self.assertions
       @@assertions

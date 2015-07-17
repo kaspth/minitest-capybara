@@ -168,25 +168,6 @@ module Capybara
 
 
     ##
-    # Assertion that there is select
-    #
-    # see Capybara::Assertions#refute_select
-    # see Capybara::Assertions#assert_no_select
-    # see Capybara::expectations#must_have_select
-    # see Capybara::expectations#wont_have_select
-    # :method: assert_select
-
-    ##
-    # Assertion that there is no select
-    #
-    # see Capybara::Assertions#assert_select
-    # see Capybara::expectations#must_have_select
-    # see Capybara::expectations#wont_have_select
-    # :method: refute_select
-    # :alias: assert_no_select
-
-
-    ##
     # Assertion that there is selector
     #
     # see Capybara::Assertions#refute_selector
